@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm start)",
       "Bash(fd:*)",
-      "Bash(npm run serve:*)"
+      "Bash(npm run serve:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
