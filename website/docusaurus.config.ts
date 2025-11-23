@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://aai-wiki.pages.dev', // Change to custom domain when ready
+  url: 'https://aai.wiki',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
@@ -43,7 +43,16 @@ const config: Config = {
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
         },
-        blog: false, // Disable blog for now
+        blog: {
+          blogTitle: 'AAI Wiki Blog',
+          blogDescription: 'Articles, updates, and insights on allergy, asthma, and immunology',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'Recent Posts',
+          blogSidebarCount: 10,
+          showReadingTime: true,
+          editUrl: 'https://github.com/M-Pepper/aai-wiki/edit/main/website/',
+          routeBasePath: 'blog',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -60,7 +69,7 @@ const config: Config = {
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
         indexDocs: true,
-        indexBlog: false,
+        indexBlog: true,
         indexPages: false,
         docsRouteBasePath: '/',
       },
@@ -97,6 +106,11 @@ const config: Config = {
       //   src: 'img/logo.svg',
       // },
       items: [
+        {
+          to: '/blog',
+          label: 'Blog',
+          position: 'left',
+        },
         {
           to: '/contributing',
           label: 'Contributing',

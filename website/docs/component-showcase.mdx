@@ -1,0 +1,213 @@
+---
+id: component-showcase
+title: Component Showcase
+description: Examples of banners, alerts, and other visual components available in AAI Wiki
+sidebar_label: Component Showcase
+---
+
+import AsideMessage from '@site/src/components/AsideMessage';
+
+# Component Showcase
+
+This page demonstrates the various visual components and styling options available in AAI Wiki.
+
+---
+
+## Announcement Banners
+
+Announcement banners appear at the top of every page and are useful for site-wide alerts.
+
+:::tip Configuration
+To enable an announcement banner, uncomment and edit the `announcementBar` section in `docusaurus.config.ts`.
+:::
+
+**Example configuration:**
+
+```typescript
+announcementBar: {
+  id: 'guideline_update_2024',
+  content: '🎉 <strong>New GINA 2024 guidelines</strong> now available. <a href="/asthma/guidelines-2024">Read more</a>',
+  backgroundColor: '#0891b2',
+  textColor: '#ffffff',
+  isCloseable: true,
+},
+```
+
+---
+
+## Alert Messages (AsideMessage Component)
+
+### Information Alerts
+
+<AsideMessage type="note">
+  This is an **informational note**. Use this for general information, tips, or helpful context that readers should be aware of.
+</AsideMessage>
+
+### Success Messages
+
+<AsideMessage type="tip">
+  This is a **tip or success message**. Use this for best practices, recommendations, or positive outcomes.
+</AsideMessage>
+
+### Warning Messages
+
+<AsideMessage type="warning">
+  This is a **warning message**. Use this for important cautions, potential risks, or things to watch out for in clinical practice.
+</AsideMessage>
+
+### Danger/Error Messages
+
+<AsideMessage type="danger">
+  This is a **danger or error message**. Use this for critical warnings, contraindications, or serious adverse events that require immediate attention.
+</AsideMessage>
+
+### Caution Messages
+
+<AsideMessage type="caution">
+  This is a **caution message**. Use this for situations requiring careful consideration or when there are important caveats to consider.
+</AsideMessage>
+
+---
+
+## Clinical Scenario Example
+
+Here's how these components might be used in a real clinical guideline:
+
+### Acute Asthma Exacerbation Management
+
+<AsideMessage type="danger">
+  **EMERGENCY**: If the patient has any signs of life-threatening asthma (altered consciousness, cyanosis, poor respiratory effort, silent chest), immediately call for ICU support and prepare for intubation.
+</AsideMessage>
+
+**Initial Assessment:**
+
+<AsideMessage type="note">
+  Assess severity using peak flow or FEV1 (% predicted or personal best), respiratory rate, heart rate, oxygen saturation, and ability to speak in full sentences.
+</AsideMessage>
+
+**Treatment Protocol:**
+
+1. **Oxygen**: Target SpO2 94-98% (93-97% in children)
+2. **Beta-2 agonist**: Salbutamol 5mg via nebulizer or 4-6 puffs via MDI with spacer
+3. **Corticosteroids**: Prednisolone 40-50mg PO or IV hydrocortisone 100mg
+
+<AsideMessage type="warning">
+  Monitor for signs of deterioration. If no improvement after initial treatment, consider:
+  - Ipratropium bromide 500mcg via nebulizer
+  - IV magnesium sulfate 2g over 20 minutes
+  - Senior clinician review
+</AsideMessage>
+
+<AsideMessage type="tip">
+  **Best Practice**: Document peak flow before and after treatment to objectively assess response. A <20% improvement suggests severe exacerbation requiring admission.
+</AsideMessage>
+
+---
+
+## Markdown Admonitions
+
+Docusaurus also supports native admonitions using the `:::` syntax:
+
+:::note
+This is a note admonition
+:::
+
+:::tip
+This is a tip admonition
+:::
+
+:::info
+This is an info admonition
+:::
+
+:::caution
+This is a caution admonition
+:::
+
+:::danger
+This is a danger admonition
+:::
+
+---
+
+## Code Blocks with Syntax Highlighting
+
+```python
+# Example: Calculate predicted peak flow
+def predicted_peak_flow(age, height_cm, sex):
+    """
+    Calculate predicted peak expiratory flow (PEF) in L/min
+
+    Args:
+        age: Age in years
+        height_cm: Height in centimeters
+        sex: 'male' or 'female'
+
+    Returns:
+        Predicted PEF in L/min
+    """
+    if sex == 'male':
+        return (5.48 * height_cm) - (0.041 * age) - 463.1
+    else:
+        return (3.72 * height_cm) - (0.024 * age) - 316.5
+
+# Example usage
+pef = predicted_peak_flow(age=45, height_cm=170, sex='male')
+print(f"Predicted PEF: {pef:.0f} L/min")
+```
+
+```bash
+# Install AAI Wiki locally
+git clone https://github.com/M-Pepper/aai-wiki.git
+cd aai-wiki/website
+npm install
+npm start
+```
+
+---
+
+## Tables
+
+| Severity | Peak Flow (% predicted) | Respiratory Rate | Heart Rate | SpO2 |
+|----------|------------------------|------------------|------------|------|
+| Mild | >80% | <20/min | <100 bpm | >95% |
+| Moderate | 60-80% | 20-25/min | 100-120 bpm | 92-95% |
+| Severe | 40-60% | 25-30/min | 120-140 bpm | <92% |
+| Life-threatening | <40% | >30/min or bradypnea | >140 bpm or bradycardia | <90% |
+
+---
+
+## Links and References
+
+- [GINA Guidelines](https://ginasthma.org/)
+- [Internal link to Asthma section](/asthma)
+- [Contributing Guide](/contributing)
+
+---
+
+## Images
+
+Images can be added to the `static/img/` directory and referenced like this:
+
+```markdown
+![AAI Wiki Logo](/img/favicon.svg)
+```
+
+![AAI Wiki Logo](/img/favicon.svg)
+
+---
+
+## Summary
+
+This page demonstrates:
+
+✅ Announcement banner configuration
+✅ Five types of alert messages (note, tip, warning, danger, caution)
+✅ Clinical scenario with contextual alerts
+✅ Markdown admonitions
+✅ Code blocks with syntax highlighting
+✅ Tables
+✅ Links (internal and external)
+✅ Images
+
+Use these components to create rich, informative, and visually appealing clinical content!
