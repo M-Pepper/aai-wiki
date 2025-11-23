@@ -1,0 +1,23 @@
+# AAI Wiki - Robots.txt
+# Welcome search engines!
+
+User-agent: *
+Allow: /
+
+# Allow all content to be crawled
+Allow: /asthma/
+Allow: /allergies/
+Allow: /anaphylaxis/
+Allow: /immunology/
+Allow: /procedures/
+Allow: /blog/
+Allow: /about
+Allow: /contributing
+Allow: /assets
+
+# Disallow build artifacts and internal files
+Disallow: /.docusaurus/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://aai.wiki/sitemap.xml

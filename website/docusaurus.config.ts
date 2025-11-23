@@ -19,9 +19,55 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
-  // GitHub pages deployment config (if using GitHub)
-  // organizationName: 'yourusername',
-  // projectName: 'aai-wiki',
+  // GitHub pages deployment config
+  organizationName: 'M-Pepper',
+  projectName: 'aai-wiki',
+
+  // SEO Configuration
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'keywords',
+        content: 'allergy, asthma, immunology, clinical guidelines, AAI, evidence-based medicine, allergic rhinitis, anaphylaxis, immunotherapy, medical reference',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'description',
+        content: 'AAI Wiki is a free, open-source, evidence-based clinical reference for healthcare professionals treating allergies, asthma, and immunological conditions.',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:type',
+        content: 'website',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:site_name',
+        content: 'AAI Wiki',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'canonical',
+        href: 'https://aai.wiki',
+      },
+    },
+  ],
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -42,6 +88,12 @@ const config: Config = {
           routeBasePath: '/', // Docs-only mode - docs are the site
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
         blog: {
           blogTitle: 'AAI Wiki Blog',
@@ -79,8 +131,20 @@ const config: Config = {
   plugins: [],
 
   themeConfig: {
-    // Replace with AAI Wiki social card when created
-    // image: 'img/aai-wiki-social-card.jpg',
+    // Social card for sharing (will use favicon until custom card is created)
+    image: 'img/favicon-512.png',
+
+    // SEO Metadata
+    metadata: [
+      {name: 'keywords', content: 'allergy, asthma, immunology, clinical guidelines, AAI, evidence-based medicine'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:title', content: 'AAI Wiki - Evidence-Based Clinical Reference'},
+      {name: 'twitter:description', content: 'Free, open-source clinical reference for allergy, asthma, and immunology professionals'},
+      {property: 'og:title', content: 'AAI Wiki - Evidence-Based Clinical Reference'},
+      {property: 'og:description', content: 'Free, open-source clinical reference for allergy, asthma, and immunology professionals'},
+      {property: 'og:image', content: 'https://aai.wiki/img/favicon-512.png'},
+      {property: 'og:url', content: 'https://aai.wiki'},
+    ],
 
     // Color mode configuration
     colorMode: {
