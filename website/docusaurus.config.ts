@@ -38,8 +38,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Remove or update editUrl when repository is set up
-          // editUrl: 'https://github.com/yourusername/aai-wiki/edit/main/website/',
+          editUrl: 'https://github.com/M-Pepper/aai-wiki/edit/main/website/',
           routeBasePath: '/', // Docs-only mode - docs are the site
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
@@ -51,6 +50,24 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en'],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: '/',
+      },
+    ],
+  ],
+
+  plugins: [],
 
   themeConfig: {
     // Replace with AAI Wiki social card when created
