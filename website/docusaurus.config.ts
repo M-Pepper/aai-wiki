@@ -136,17 +136,20 @@ const config: Config = {
           items: [
             {
               label: 'Getting Started',
-              to: '/docs/intro',
+              to: '/',
             },
-            // Add more as content is created
-            // {
-            //   label: 'Asthma',
-            //   to: '/docs/asthma',
-            // },
-            // {
-            //   label: 'Food Allergies',
-            //   to: '/docs/food-allergies',
-            // },
+            {
+              label: 'Asthma',
+              to: '/asthma',
+            },
+            {
+              label: 'Allergies',
+              to: '/allergies',
+            },
+            {
+              label: 'Anaphylaxis',
+              to: '/anaphylaxis',
+            },
           ],
         },
         {
@@ -171,7 +174,7 @@ const config: Config = {
           items: [
             {
               label: 'Contributing Guide',
-              to: '/docs/contributing', // Will create this later
+              to: '/contributing',
             },
             // Uncomment when GitHub is set up
             // {
