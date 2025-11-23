@@ -1,0 +1,351 @@
+---
+sidebar_position: 100
+sidebar_label: Contributing
+title: Contributing to AAI Wiki
+description: Guide for contributing to the AAI Wiki project
+---
+
+import AsideMessage from '@site/src/components/AsideMessage';
+
+# Contributing to AAI Wiki
+
+Welcome to the AAI Wiki! We're building a community-driven clinical reference for allergy, asthma, and immunology healthcare professionals. Your contributions help improve patient care.
+
+<AsideMessage type="note">
+  This guide covers how to contribute content. For detailed technical documentation, see the project [GitHub repository](https://github.com/yourusername/aai-wiki).
+</AsideMessage>
+
+## Who Can Contribute?
+
+We welcome contributions from:
+
+- **Allergists and Immunologists** - Board-certified or in practice
+- **Fellows in Training** - AAI fellowship programs
+- **Pediatricians** - Managing allergic conditions
+- **Advanced Practice Providers** - NPs, PAs specializing in AAI
+- **Residents and Medical Students** - With faculty review
+- **Other Healthcare Professionals** - Pharmacists, respiratory therapists, etc.
+- **Anyone** - For typos, broken links, and technical improvements
+
+## Types of Contributions
+
+### Quick Fixes
+- Fix typos or grammatical errors
+- Correct broken links
+- Update outdated information
+- Clarify confusing language
+
+**How:** Click "Edit this page" at the bottom of any article → Make changes → Submit
+
+### Content Updates
+- Update articles based on new guidelines (e.g., GINA 2024)
+- Add recent evidence or studies
+- Expand existing articles with missing information
+- Update drug dosing or treatment algorithms
+
+### New Articles
+- Write comprehensive articles on AAI topics
+- Create clinical protocols or management guides
+- Add procedure descriptions or techniques
+- Contribute educational resources
+
+### Technical Improvements
+- Improve site performance or accessibility
+- Fix bugs in React components
+- Enhance mobile responsiveness
+- Add new features
+
+## Getting Started
+
+### Option A: Easy Web-Based Editing
+
+Perfect for quick fixes and small updates.
+
+1. Navigate to the article you want to edit
+2. Click "Edit this page" at the bottom (opens GitHub editor)
+3. Make your changes in the web editor
+4. Preview your changes (optional)
+5. Describe your changes in the commit message
+6. Choose "Create a new branch and start a pull request"
+7. Click "Propose changes"
+8. Wait for review - A maintainer will review and merge
+
+### Option B: Local Development
+
+For new articles or significant updates.
+
+#### Prerequisites
+
+```bash
+# Install Node.js 18+ (if not already installed)
+# On Fedora:
+sudo dnf install nodejs
+
+# Verify
+node --version  # Should be 18.0.0+
+npm --version
+```
+
+#### Setup Process
+
+1. **Fork the repository**
+   - Go to the GitHub repository
+   - Click "Fork" (top right)
+
+2. **Clone your fork**
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/aai-wiki.git
+   cd aai-wiki/website
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Create a branch**
+   ```bash
+   git checkout -b article/acute-asthma-exacerbation
+   # Or: fix/typo-in-overview
+   # Or: update/gina-2024-guidelines
+   ```
+
+5. **Start development server**
+   ```bash
+   npm start
+   # Opens http://localhost:3000
+   # Auto-reloads when you save changes
+   ```
+
+6. **Make your changes**
+   - Edit files in `docs/` folder
+   - Use `.mdx` extension for Markdown files
+   - See Style Guide for formatting
+
+7. **Test your changes**
+   ```bash
+   # Build the site (checks for errors)
+   npm run build
+
+   # Serve the built site
+   npm run serve
+   ```
+
+8. **Commit and push**
+   ```bash
+   git add docs/asthma/acute-exacerbation.mdx
+   git commit -m "Add acute asthma exacerbation article"
+   git push origin article/acute-asthma-exacerbation
+   ```
+
+9. **Create a pull request**
+   - Go to your fork on GitHub
+   - Click "Contribute" → "Open pull request"
+   - Fill out the PR template
+   - Click "Create pull request"
+
+## Content Guidelines
+
+### Evidence-Based Medicine
+
+All clinical content must be:
+
+1. **Evidence-based** - Cite guidelines, systematic reviews, or RCTs
+2. **Current** - Use the most recent guidelines (e.g., GINA 2024)
+3. **Unbiased** - No promotional content for drugs, devices, or companies
+4. **Balanced** - Present controversies fairly when expert opinion differs
+
+### Preferred Sources
+
+In order of preference:
+
+1. **Major guidelines**
+   - GINA (Global Initiative for Asthma)
+   - PRACTALL (Practical Allergy)
+   - AAAAI/ACAAI Joint Task Force reports
+   - EAACI (European Academy of Allergy)
+   - WAO (World Allergy Organization)
+
+2. **Systematic reviews and meta-analyses**
+   - Cochrane reviews
+   - High-quality meta-analyses
+
+3. **Randomized controlled trials**
+   - Published in peer-reviewed journals
+
+4. **Expert consensus statements**
+   - When high-quality evidence is lacking
+
+### Citations
+
+**Inline citation example:**
+```markdown
+According to [GINA 2024](https://ginasthma.org), first-line treatment includes...
+```
+
+**References section:**
+```markdown
+## References
+
+- [GINA 2024 Guidelines](https://ginasthma.org/reports/)
+- [NAEPP Expert Panel Report 4](https://www.nhlbi.nih.gov/health-topics/asthma)
+```
+
+<AsideMessage type="warning">
+  **Conflicts of Interest:** Disclose in your PR if you receive research funding, consult for companies, or have financial relationships with mentioned products. Transparency is required.
+</AsideMessage>
+
+## Review Process
+
+### What Happens After You Submit?
+
+1. **Automated checks run** (~2 min)
+   - Build succeeds (no errors)
+   - Preview deployment created
+
+2. **Maintainer reviews** (1-7 days)
+   - Checks for obvious issues
+   - Assigns expert reviewer if needed
+   - May request changes
+
+3. **Expert review** (if applicable)
+   - Clinical accuracy verified
+   - Evidence quality assessed
+   - May suggest improvements
+
+4. **Discussion** (if controversial)
+   - GitHub Discussions thread created
+   - Community weighs in
+   - Consensus documented
+
+5. **Approval and merge**
+   - PR approved by reviewer(s)
+   - Merged by maintainer
+   - Auto-deploys to site (~5 min)
+
+### Response Times
+
+- **Quick fixes (typos):** Usually merged within 24 hours
+- **Content updates:** 1-7 days (needs expert review)
+- **New articles:** 1-2 weeks (thorough review)
+- **Controversial topics:** May take longer (discussion needed)
+
+We're all volunteers - thank you for your patience!
+
+## Community Guidelines
+
+### Expected Behavior
+
+- Be respectful and professional
+- Assume good faith
+- Provide constructive feedback
+- Debate ideas, not people
+- Follow medical ethics
+- Disclose conflicts of interest
+- Use inclusive language
+
+### Unacceptable Behavior
+
+- Harassment or discrimination
+- Personal attacks or insults
+- Promoting unproven treatments
+- Plagiarism or copyright violation
+- Sharing patient information (HIPAA)
+
+### Clinical Debates
+
+Disagreement is expected in medicine - we welcome respectful debate!
+
+For controversial topics:
+- Focus on evidence quality
+- Cite sources for your position
+- Acknowledge uncertainty when appropriate
+- Respect differing expert opinions
+- Document consensus OR note ongoing controversy
+
+## Getting Help
+
+### Questions About Content
+- Open a GitHub Discussion
+- Tag as "Content Question"
+
+### Technical Issues
+- Open a GitHub Issue
+- Include error messages and steps to reproduce
+
+### General Questions
+- Check existing issues/discussions first
+- Contact project maintainers
+
+## Recognition
+
+We value all contributions! Ways we recognize contributors:
+
+- **Commit history** - Your GitHub username permanently in git log
+- **Contributors page** - Optional listing on website
+- **Article attribution** - "Contributed by" at bottom of articles you write
+- **Reviewer credits** - Recognition for expert reviews
+
+## Our Contributors
+
+All contributors to AAI Wiki are listed below. Thank you for making this resource possible!
+
+<AsideMessage type="note">
+  **Note:** The contributors list will be automatically populated once the GitHub repository is live. Contributors are shown based on their commits to the repository.
+</AsideMessage>
+
+### How the Contributors List Works
+
+Once our GitHub repository is public, this section will display:
+
+- **All contributors** who have made commits to the repository
+- **Contribution statistics** showing the number of commits
+- **Profile links** to each contributor's GitHub profile
+- **Automatic updates** as new contributors join
+
+The list uses GitHub's built-in contributors API, which automatically tracks:
+- Code contributions (new features, bug fixes)
+- Content contributions (new articles, updates)
+- Documentation improvements
+- Review and feedback
+
+### Displaying Contributors
+
+To manually display contributors on any page, you can use GitHub's contributors widget:
+
+```html
+<!-- This will be implemented after GitHub repository is created -->
+<a href="https://github.com/yourusername/aai-wiki/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yourusername/aai-wiki" />
+</a>
+```
+
+This generates a visual grid of all contributor avatars with links to their profiles.
+
+### Top Contributors
+
+We'll also highlight top contributors based on:
+- Number of commits
+- Lines of code/content added
+- Review participation
+- Community engagement
+
+**Coming soon:** Dedicated contributors page with detailed statistics and recognition.
+
+## License
+
+By contributing to AAI Wiki, you agree that your contributions will be licensed under CC BY-SA 4.0.
+
+This means:
+- Your work will be freely available
+- Others can adapt your work (with attribution)
+- Derivative works must use the same license
+- You retain copyright of your original work
+
+---
+
+## Thank You!
+
+Your contributions improve clinical care for patients with allergic and immunologic conditions. Every typo fix, citation update, and new article makes a difference.
+
+Welcome to the community!
