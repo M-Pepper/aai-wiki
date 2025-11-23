@@ -70,7 +70,13 @@ const config: Config = {
   ],
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+
+  // Markdown configuration (v4 compatible)
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // Internationalization config
   i18n: {
@@ -153,14 +159,14 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
 
-    // Announcement bar (uncomment and customize for important updates)
-    // announcementBar: {
-    //   id: 'guideline_update_2024',
-    //   content: '🎉 <strong>New GINA 2024 guidelines</strong> now available. <a href="/docs/asthma/guidelines-2024">Read more</a>',
-    //   backgroundColor: '#0891b2',
-    //   textColor: '#ffffff',
-    //   isCloseable: true,
-    // },
+    // Announcement bar (customize for important updates)
+    announcementBar: {
+      id: 'site_launch_2025',
+      content: '🚀 <strong>AAI Wiki is now live!</strong> Free, open-source clinical reference for allergy, asthma, and immunology. <a href="/contributing">Join us</a>',
+      backgroundColor: '#0891b2',
+      textColor: '#ffffff',
+      isCloseable: true,
+    },
 
     // Navbar configuration
     navbar: {
