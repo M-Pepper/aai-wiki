@@ -196,12 +196,12 @@ const config: Config = {
           label: 'Assets',
           position: 'left',
         },
-        // Uncomment when GitHub repo is set up
-        // {
-        //   href: 'https://github.com/yourusername/aai-wiki',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+        {
+          href: 'https://github.com/M-Pepper/aai-wiki',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+        },
 
         // Search will be added here when Algolia is configured
         // {
