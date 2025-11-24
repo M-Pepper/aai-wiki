@@ -1,0 +1,151 @@
+/* Dismissible Banner Component */
+.dismissible-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem 1rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dismissible-banner__content {
+  flex: 1;
+}
+
+.dismissible-banner__content a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.dismissible-banner__content a:hover {
+  text-decoration: none;
+}
+
+.dismissible-banner__close {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 200ms ease;
+}
+
+.dismissible-banner__close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dismissible-banner__close:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Info variant (blue) */
+.dismissible-banner--info {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.dismissible-banner--info a {
+  color: #1e40af;
+}
+
+[data-theme='dark'] .dismissible-banner--info {
+  background-color: #1e3a8a;
+  color: #dbeafe;
+  border-color: #3b82f6;
+}
+
+[data-theme='dark'] .dismissible-banner--info a {
+  color: #93c5fd;
+}
+
+[data-theme='dark'] .dismissible-banner--info .dismissible-banner__close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Warning variant (amber) */
+.dismissible-banner--warning {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+.dismissible-banner--warning a {
+  color: #92400e;
+}
+
+[data-theme='dark'] .dismissible-banner--warning {
+  background-color: #78350f;
+  color: #fef3c7;
+  border-color: #f59e0b;
+}
+
+[data-theme='dark'] .dismissible-banner--warning a {
+  color: #fbbf24;
+}
+
+[data-theme='dark'] .dismissible-banner--warning .dismissible-banner__close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Success variant (green) */
+.dismissible-banner--success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.dismissible-banner--success a {
+  color: #065f46;
+}
+
+[data-theme='dark'] .dismissible-banner--success {
+  background-color: #064e3b;
+  color: #d1fae5;
+  border-color: #10b981;
+}
+
+[data-theme='dark'] .dismissible-banner--success a {
+  color: #6ee7b7;
+}
+
+[data-theme='dark'] .dismissible-banner--success .dismissible-banner__close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Danger variant (red) */
+.dismissible-banner--danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.dismissible-banner--danger a {
+  color: #991b1b;
+}
+
+[data-theme='dark'] .dismissible-banner--danger {
+  background-color: #7f1d1d;
+  color: #fee2e2;
+  border-color: #ef4444;
+}
+
+[data-theme='dark'] .dismissible-banner--danger a {
+  color: #fca5a5;
+}
+
+[data-theme='dark'] .dismissible-banner--danger .dismissible-banner__close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

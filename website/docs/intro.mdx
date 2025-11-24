@@ -8,23 +8,25 @@ description: Evidence-based clinical reference for allergy, asthma, and immunolo
 
 import Card from '@site/src/components/Card';
 import AsideMessage from '@site/src/components/AsideMessage';
+import DismissibleBanner from '@site/src/components/DismissibleBanner/DismissibleBanner';
 
-:::info Work in Progress
-This wiki is under active development. Content is being added progressively with community input and expert review. See our [Contributing Guide](/contributing) to help build this resource.
-:::
+<DismissibleBanner id="wip-2025" variant="info">
+  **Work in Progress:** This wiki is under active development. Content is being added progressively with community input and expert review. See our <a href="/contributing">Contributing Guide</a> to help build this resource.
+</DismissibleBanner>
 
 <div style={{
-  background: 'linear-gradient(135deg, var(--aai-primary) 0%, var(--aai-secondary) 100%)',
+  background: 'linear-gradient(135deg, var(--aai-hero-gradient-start) 0%, var(--aai-hero-gradient-end) 100%)',
   color: 'white',
   padding: '3rem 2rem',
   marginBottom: '3rem',
   borderRadius: 'var(--aai-radius-lg)',
-  textAlign: 'center'
+  textAlign: 'center',
+  boxShadow: 'var(--aai-shadow-lg)'
 }}>
-  <h1 style={{ color: 'white', fontSize: '2.5rem', marginBottom: '1rem' }}>
+  <h1 style={{ color: 'white', fontSize: '2.5rem', marginBottom: '1rem', textShadow: '0 2px 4px rgba(0, 0, 0, 0.2)' }}>
     Welcome to AAI Wiki
   </h1>
-  <p style={{ fontSize: '1.25rem', marginBottom: 0, opacity: 0.95 }}>
+  <p style={{ fontSize: '1.25rem', marginBottom: 0, opacity: 0.98, textShadow: '0 1px 2px rgba(0, 0, 0, 0.15)' }}>
     Evidence-based clinical reference for allergy, asthma, and immunology
   </p>
 </div>

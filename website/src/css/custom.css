@@ -10,33 +10,37 @@
    Light Mode Variables
    ========================================================================== */
 :root {
-  /* Primary Colors (Cyan-based professional medical) */
-  --aai-primary: #0891b2;        /* Cyan 600 */
-  --aai-primary-light: #06b6d4;  /* Cyan 500 */
-  --aai-primary-dark: #0e7490;   /* Cyan 700 */
+  /* Primary Colors (Deep navy-slate professional medical palette) */
+  --aai-primary: #334155;        /* Slate 700 - much darker, professional */
+  --aai-primary-light: #475569;  /* Slate 600 */
+  --aai-primary-dark: #1e293b;   /* Slate 800 - very dark */
 
   /* Map to Docusaurus Infima variables */
-  --ifm-color-primary: #0891b2;
-  --ifm-color-primary-dark: #0e7490;
-  --ifm-color-primary-darker: #155e75;
-  --ifm-color-primary-darkest: #164e63;
-  --ifm-color-primary-light: #06b6d4;
-  --ifm-color-primary-lighter: #22d3ee;
-  --ifm-color-primary-lightest: #67e8f9;
+  --ifm-color-primary: #334155;
+  --ifm-color-primary-dark: #1e293b;
+  --ifm-color-primary-darker: #0f172a;
+  --ifm-color-primary-darkest: #020617;
+  --ifm-color-primary-light: #475569;
+  --ifm-color-primary-lighter: #64748b;
+  --ifm-color-primary-lightest: #94a3b8;
 
-  /* Accent Colors */
+  /* Accent Colors (more subdued, professional) */
   --aai-secondary: #0369a1;      /* Sky 700 */
-  --aai-success: #059669;        /* Emerald 600 */
-  --aai-warning: #f59e0b;        /* Amber 500 */
-  --aai-danger: #dc2626;         /* Red 600 */
-  --aai-accent: #8b5cf6;         /* Violet 500 */
+  --aai-success: #047857;        /* Emerald 700 - darker */
+  --aai-warning: #d97706;        /* Amber 600 - darker */
+  --aai-danger: #b91c1c;         /* Red 700 - darker */
+  --aai-accent: #7c3aed;         /* Violet 600 - darker */
+
+  /* Hero/Banner Gradient Colors */
+  --aai-hero-gradient-start: #475569;  /* Slate 600 - readable with white text */
+  --aai-hero-gradient-end: #0369a1;    /* Sky 700 - professional blue */
 
   /* Neutral Colors */
-  --aai-text-primary: #1e293b;   /* Slate 800 */
-  --aai-text-secondary: #64748b; /* Slate 500 */
+  --aai-text-primary: #0f172a;   /* Slate 900 - darker text */
+  --aai-text-secondary: #475569; /* Slate 600 - darker secondary */
   --aai-bg-primary: #ffffff;
-  --aai-bg-secondary: #f8fafc;   /* Slate 50 */
-  --aai-border: #e2e8f0;         /* Slate 200 */
+  --aai-bg-secondary: #f8fafc;   /* Slate 50 - much lighter */
+  --aai-border: #e2e8f0;         /* Slate 200 - lighter border */
 
   /* Typography */
   --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -84,36 +88,40 @@
    Dark Mode Variables
    ========================================================================== */
 [data-theme='dark'] {
-  /* Primary Colors (lighter for dark background) */
-  --aai-primary: #22d3ee;        /* Cyan 400 */
-  --aai-primary-light: #67e8f9;  /* Cyan 300 */
-  --aai-primary-dark: #06b6d4;   /* Cyan 500 */
+  /* Primary Colors (muted slate/blue for dark mode - professional) */
+  --aai-primary: #94a3b8;        /* Slate 400 - muted, easy on eyes */
+  --aai-primary-light: #cbd5e1;  /* Slate 300 */
+  --aai-primary-dark: #64748b;   /* Slate 500 */
 
   /* Map to Docusaurus Infima variables */
-  --ifm-color-primary: #22d3ee;
-  --ifm-color-primary-dark: #06b6d4;
-  --ifm-color-primary-darker: #0891b2;
-  --ifm-color-primary-darkest: #0e7490;
-  --ifm-color-primary-light: #67e8f9;
-  --ifm-color-primary-lighter: #a5f3fc;
-  --ifm-color-primary-lightest: #cffafe;
+  --ifm-color-primary: #94a3b8;
+  --ifm-color-primary-dark: #64748b;
+  --ifm-color-primary-darker: #475569;
+  --ifm-color-primary-darkest: #334155;
+  --ifm-color-primary-light: #cbd5e1;
+  --ifm-color-primary-lighter: #e2e8f0;
+  --ifm-color-primary-lightest: #f1f5f9;
 
-  /* Accent Colors */
-  --aai-secondary: #38bdf8;      /* Sky 400 */
-  --aai-success: #10b981;        /* Emerald 500 */
-  --aai-warning: #fbbf24;        /* Amber 400 */
-  --aai-danger: #f87171;         /* Red 400 */
-  --aai-accent: #a78bfa;         /* Violet 400 */
+  /* Accent Colors (muted for dark mode comfort) */
+  --aai-secondary: #7dd3fc;      /* Sky 300 - softer */
+  --aai-success: #6ee7b7;        /* Emerald 300 - softer */
+  --aai-warning: #fcd34d;        /* Amber 300 - softer */
+  --aai-danger: #fca5a5;         /* Red 300 - softer */
+  --aai-accent: #c4b5fd;         /* Violet 300 - softer */
 
-  /* Neutral Colors */
-  --aai-text-primary: #e2e8f0;   /* Slate 200 */
-  --aai-text-secondary: #94a3b8; /* Slate 400 */
-  --aai-bg-primary: #0f172a;     /* Slate 900 */
-  --aai-bg-secondary: #1e293b;   /* Slate 800 */
-  --aai-border: #334155;         /* Slate 700 */
+  /* Hero/Banner Gradient Colors for dark mode */
+  --aai-hero-gradient-start: #64748b;  /* Slate 500 - muted for dark backgrounds */
+  --aai-hero-gradient-end: #3b82f6;    /* Blue 500 - professional blue for dark */
+
+  /* Neutral Colors (dark but not pure black - easier on eyes) */
+  --aai-text-primary: #f1f5f9;   /* Slate 100 - softer white */
+  --aai-text-secondary: #cbd5e1; /* Slate 300 */
+  --aai-bg-primary: #1e293b;     /* Slate 800 - lighter dark background */
+  --aai-bg-secondary: #334155;   /* Slate 700 - even lighter for contrast */
+  --aai-border: #475569;         /* Slate 600 - more visible */
 
   /* Code block styling */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: rgba(148, 163, 184, 0.15);
 }
 
 /* ============================================================================
@@ -238,6 +246,16 @@ table td {
 
 [data-theme='dark'] .aai-aside-recall {
   background-color: rgba(139, 92, 246, 0.15);
+}
+
+/* ============================================================================
+   Docusaurus Native Admonitions - Enhanced Floating Style
+   ========================================================================== */
+
+/* Admonition heading - no text transform like Hasura */
+.theme-admonition .admonitionHeading_node_modules-\@docusaurus-theme-classic-lib-theme-Admonition-Layout-styles-module,
+.theme-admonition h5 {
+  text-transform: none;
 }
 
 /* ============================================================================

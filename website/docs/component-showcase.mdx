@@ -6,6 +6,7 @@ sidebar_label: Component Showcase
 ---
 
 import AsideMessage from '@site/src/components/AsideMessage';
+import DismissibleBanner from '@site/src/components/DismissibleBanner/DismissibleBanner';
 
 # Component Showcase
 
@@ -13,7 +14,45 @@ This page demonstrates the various visual components and styling options availab
 
 ---
 
-## Announcement Banners
+## Dismissible Banners
+
+Dismissible banners are floating announcement boxes that users can close. They persist using localStorage.
+
+### Info Banner
+
+<DismissibleBanner id="example-info" variant="info">
+  **New Feature:** Check out our updated asthma management guidelines. <a href="/asthma">Learn more</a>
+</DismissibleBanner>
+
+### Warning Banner
+
+<DismissibleBanner id="example-warning" variant="warning">
+  **Maintenance Notice:** The site will undergo scheduled maintenance on Saturday, 2 AM - 4 AM EST.
+</DismissibleBanner>
+
+### Success Banner
+
+<DismissibleBanner id="example-success" variant="success">
+  **Updated:** GINA 2024 guidelines have been incorporated into all asthma content.
+</DismissibleBanner>
+
+### Danger Banner
+
+<DismissibleBanner id="example-danger" variant="danger">
+  **Critical Update:** Major changes to anaphylaxis treatment protocols. <a href="/anaphylaxis">Review immediately</a>
+</DismissibleBanner>
+
+**Usage in MDX:**
+
+```tsx
+<DismissibleBanner id="unique-id" variant="info">
+  Your message here with <a href="/link">links</a>
+</DismissibleBanner>
+```
+
+---
+
+## Site-Wide Announcement Banners
 
 Announcement banners appear at the top of every page and are useful for site-wide alerts.
 

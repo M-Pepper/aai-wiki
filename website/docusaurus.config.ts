@@ -163,7 +163,7 @@ const config: Config = {
     announcementBar: {
       id: 'site_launch_2025',
       content: '🚀 <strong>AAI Wiki is now live!</strong> Free, open-source clinical reference for allergy, asthma, and immunology. <a href="/contributing">Join us</a>',
-      backgroundColor: '#0891b2',
+      backgroundColor: '#334155',
       textColor: '#ffffff',
       isCloseable: true,
     },
