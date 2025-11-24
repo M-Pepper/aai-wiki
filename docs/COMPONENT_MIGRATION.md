@@ -338,7 +338,86 @@ import FrontmatterTabs from '@site/src/components/FrontmatterTabs';
 <FrontmatterTabs content={frontMatter.tabData} />
 ```
 
-## 7. Differences from Vue Version
+## 7. DismissibleBanner Component
+
+### Purpose
+Floating announcement/notification boxes that users can dismiss. Persistence via localStorage.
+
+### React Implementation
+
+```tsx
+// src/components/DismissibleBanner/DismissibleBanner.tsx
+import React, { useState } from 'react';
+import './DismissibleBanner.css';
+
+export interface DismissibleBannerProps {
+  /** Unique ID for localStorage persistence */
+  id: string;
+  /** Banner message content (can include JSX) */
+  children: React.ReactNode;
+  /** Banner color variant */
+  variant?: 'info' | 'warning' | 'success' | 'danger';
+}
+
+export default function DismissibleBanner({
+  id,
+  children,
+  variant = 'info'
+}: DismissibleBannerProps): JSX.Element | null {
+  const storageKey = `banner-dismissed-${id}`;
+
+  const [isVisible, setIsVisible] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem(storageKey) !== 'true';
+    }
+    return true;
+  });
+
+  const handleDismiss = () => {
+    setIsVisible(false);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(storageKey, 'true');
+    }
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <div className={`dismissible-banner dismissible-banner--${variant}`}>
+      <div className="dismissible-banner__content">
+        {children}
+      </div>
+      <button
+        className="dismissible-banner__close"
+        onClick={handleDismiss}
+        aria-label="Dismiss banner"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  );
+}
+```
+
+### Usage
+
+```mdx
+import DismissibleBanner from '@site/src/components/DismissibleBanner/DismissibleBanner';
+
+<DismissibleBanner id="wip-2025" variant="info">
+  **Work in Progress:** This wiki is under active development. See our <a href="/contributing">Contributing Guide</a>.
+</DismissibleBanner>
+```
+
+### Variants
+- `info` - Blue banner for general information
+- `warning` - Amber banner for warnings/cautions
+- `success` - Green banner for success/completion messages
+- `danger` - Red banner for critical alerts
+
+## 8. Differences from Vue Version
 
 ### Simplified Icon Handling
 - Remove dependency on `unplugin-icons`
