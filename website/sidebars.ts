@@ -43,6 +43,17 @@ const sidebars: SidebarsConfig = {
       ],
     },
     // Coming soon: Immunology and Procedures sections
+    {
+      type: 'category',
+      label: '📚 Resources',
+      collapsed: true,
+      items: [
+        'about',
+        'contributing',
+        'assets',
+        'writing-guide',
+      ],
+    },
   ],
 };
 

@@ -319,6 +319,31 @@ table td {
   color: var(--aai-primary);
 }
 
+/* Anchor Resources section to bottom of sidebar */
+.theme-doc-sidebar-container aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-doc-sidebar-container .menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.theme-doc-sidebar-container .menu > .menu__list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Target the last category (Resources) and push it to bottom */
+.theme-doc-sidebar-container .menu > .menu__list > .menu__list-item:last-child {
+  margin-top: auto;
+  border-top: 1px solid var(--aai-border);
+  padding-top: var(--aai-space-md);
+}
+
 /* ============================================================================
    Table of Contents
    ========================================================================== */
