@@ -48,6 +48,11 @@ export default function NumberInput({
     }
   };
 
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = parseInt(e.target.value, 10);
+    onChange(newValue);
+  };
+
   return (
     <div className={`number-input ${className}`}>
       <label className="number-input__label">
@@ -91,6 +96,17 @@ export default function NumberInput({
           +
         </button>
       </div>
+
+      <input
+        type="range"
+        value={value}
+        onChange={handleSliderChange}
+        min={min}
+        max={max}
+        step={step}
+        className="number-input__slider"
+        aria-label={`${label} slider`}
+      />
     </div>
   );
 }

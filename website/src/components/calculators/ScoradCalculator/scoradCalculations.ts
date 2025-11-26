@@ -18,14 +18,14 @@ export type IntensityScore = 0 | 1 | 2 | 3;
 export type SubjectiveScore = number; // 0-10
 
 export interface BodyRegions {
-  headNeck: number;        // BSA percentage (0-9)
-  upperLimbLeft: number;   // BSA percentage (0-9)
-  upperLimbRight: number;  // BSA percentage (0-9)
-  lowerLimbLeft: number;   // BSA percentage (0-18)
-  lowerLimbRight: number;  // BSA percentage (0-18)
-  anteriorTrunk: number;   // BSA percentage (0-18)
-  back: number;            // BSA percentage (0-18)
-  genitals: number;        // BSA percentage (0-1)
+  headNeck: number;        // Percentage of region affected (0-100)
+  upperLimbLeft: number;   // Percentage of region affected (0-100)
+  upperLimbRight: number;  // Percentage of region affected (0-100)
+  lowerLimbLeft: number;   // Percentage of region affected (0-100)
+  lowerLimbRight: number;  // Percentage of region affected (0-100)
+  anteriorTrunk: number;   // Percentage of region affected (0-100)
+  back: number;            // Percentage of region affected (0-100)
+  genitals: number;        // Percentage of region affected (0-100)
 }
 
 export interface IntensityScores {
@@ -56,28 +56,27 @@ export interface ScoradResult {
   interpretation: 'mild' | 'moderate' | 'severe';
 }
 
-// Maximum BSA values for each region according to SCORAD methodology
-const REGION_MAX_BSA: Record<keyof BodyRegions, number> = {
-  headNeck: 9,
-  upperLimbLeft: 9,
-  upperLimbRight: 9,
-  lowerLimbLeft: 18,
-  lowerLimbRight: 18,
-  anteriorTrunk: 18,
-  back: 18,
-  genitals: 1
+// Region weights according to SCORAD methodology
+const REGION_WEIGHTS: Record<keyof BodyRegions, number> = {
+  headNeck: 0.09,
+  upperLimbLeft: 0.09,
+  upperLimbRight: 0.09,
+  lowerLimbLeft: 0.18,
+  lowerLimbRight: 0.18,
+  anteriorTrunk: 0.18,
+  back: 0.18,
+  genitals: 0.01
 };
 
 /**
- * Validates that all body region BSA values are within valid range (0-maxBSA for each region)
+ * Validates that all body region percentages are within valid range (0-100)
  */
 export function validateBodyRegions(regions: BodyRegions): { valid: boolean; errors: string[] } {
   const errors: string[] = [];
 
-  Object.entries(regions).forEach(([region, bsaValue]) => {
-    const maxBsa = REGION_MAX_BSA[region as keyof BodyRegions];
-    if (bsaValue < 0 || bsaValue > maxBsa) {
-      errors.push(`${region}: ${bsaValue}% is out of range (0-${maxBsa})`);
+  Object.entries(regions).forEach(([region, percentage]) => {
+    if (percentage < 0 || percentage > 100) {
+      errors.push(`${region}: ${percentage}% is out of range (0-100)`);
     }
   });
 
@@ -146,15 +145,21 @@ export function validateSubjective(subjective: SubjectiveScores): { valid: boole
  * Used for validation and display purposes
  */
 export function calculateTotalBsa(regions: BodyRegions): number {
-  return Object.values(regions).reduce((total, bsaValue) => total + bsaValue, 0);
+  return Object.entries(regions).reduce((total, [region, percentage]) => {
+    const weight = REGION_WEIGHTS[region as keyof BodyRegions];
+    return total + (percentage * weight);
+  }, 0);
 }
 
 /**
  * Calculates the A score (Body Surface Area component)
- * A = sum of BSA percentages for all affected body regions
+ * A = weighted sum of affected body regions
  */
 function calculateAScore(regions: BodyRegions): number {
-  return Object.values(regions).reduce((sum, bsaValue) => sum + bsaValue, 0);
+  return Object.entries(regions).reduce((sum, [region, percentage]) => {
+    const weight = REGION_WEIGHTS[region as keyof BodyRegions];
+    return sum + (percentage * weight);
+  }, 0);
 }
 
 /**
