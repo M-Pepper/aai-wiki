@@ -1,0 +1,498 @@
+---
+sidebar_position: 99
+sidebar_label: Writing Guide
+title: MDX Writing Guide
+description: Learn how to write and format documentation using MDX
+---
+
+import AsideMessage from '@site/src/components/AsideMessage';
+
+# MDX Writing Guide
+
+This guide teaches you how to write documentation files using MDX (Markdown + React components). No technical background required!
+
+<AsideMessage type="tip">
+  **New to MDX?** Think of it as a text document with simple formatting codes. This guide shows you everything you need.
+</AsideMessage>
+
+## What is MDX?
+
+MDX files are plain text files that use simple symbols to add formatting. The file extension is `.mdx` instead of `.txt`. When saved, these files become beautifully formatted web pages.
+
+## File Structure
+
+Every MDX file must start with **front matter** - metadata between two `---` lines:
+
+```markdown
+---
+sidebar_position: 5
+title: My Page Title
+description: A short description of what this page covers
+---
+```
+
+**What each field means:**
+- `sidebar_position`: A number controlling where this page appears in the menu (1 = first, 2 = second, etc.)
+- `title`: The page title shown at the top and in browser tabs
+- `description`: A brief summary (helps with search results)
+
+After the second `---`, write your content normally.
+
+## Basic Text Formatting
+
+### Headings
+
+Create headings using `#` symbols. More `#` symbols = smaller heading:
+
+```markdown
+# Largest Heading (H1)
+## Large Heading (H2)
+### Medium Heading (H3)
+#### Small Heading (H4)
+```
+
+**Best practice:** Use only one H1 (`#`) per page - your main title. Use H2 (`##`) for major sections, H3 (`###`) for subsections.
+
+### Making Text Bold, Italic, or Monospace
+
+```markdown
+**Bold text** - surround with double asterisks
+*Italic text* - surround with single asterisks
+`Monospace text` - surround with backticks (key above Tab)
+```
+
+**When to use each:**
+- **Bold**: Important terms, emphasis, warnings
+- *Italic*: Titles of publications, emphasis
+- `Monospace`: Technical terms, specific values, codes
+
+### Line Breaks and Paragraphs
+
+- One line break: Just hit Enter once (stays in same paragraph)
+- New paragraph: Hit Enter twice (creates space between paragraphs)
+
+```markdown
+This is one paragraph.
+This line is part of the same paragraph.
+
+This is a new paragraph with space above it.
+```
+
+## Lists
+
+### Bullet Points (Unordered Lists)
+
+Use a dash `-` or asterisk `*` followed by a space:
+
+```markdown
+- First item
+- Second item
+- Third item
+```
+
+**Nested bullets** (indent with 2 spaces):
+
+```markdown
+- Main item
+  - Sub-item
+  - Another sub-item
+- Another main item
+```
+
+### Numbered Lists (Ordered Lists)
+
+Use numbers followed by a period:
+
+```markdown
+1. First step
+2. Second step
+3. Third step
+```
+
+**Nested numbers:**
+
+```markdown
+1. First step
+   1. Sub-step A
+   2. Sub-step B
+2. Second step
+```
+
+**Tip:** You can use `1.` for every item and the numbers will auto-update:
+
+```markdown
+1. First item
+1. Second item
+1. Third item
+```
+
+This still renders as 1, 2, 3 automatically!
+
+## Tables
+
+Create tables using pipes `|` and dashes `-`:
+
+```markdown
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Data A   | Data B   | Data C   |
+| Data D   | Data E   | Data F   |
+```
+
+**Renders as:**
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Data A   | Data B   | Data C   |
+| Data D   | Data E   | Data F   |
+
+**Tips:**
+- The dashes `---` separate the header row from data rows
+- Columns don't need to line up perfectly (but it's easier to read if they do)
+- Need alignment? Add colons to the dashes:
+  - `|:---|` = left-aligned
+  - `|:--:|` = center-aligned
+  - `|---:|` = right-aligned
+
+## Links
+
+### External Links
+
+```markdown
+[Link text here](https://example.com)
+```
+
+### Internal Links (to other pages on the site)
+
+```markdown
+[Link text](/path-to-page)
+```
+
+Examples:
+```markdown
+[Visit our homepage](/)
+[Read the contributing guide](/contributing)
+[See the asthma section](/asthma)
+```
+
+## Images
+
+```markdown
+![Alt text description](./path/to/image.png)
+```
+
+- `Alt text`: Describes the image (required for accessibility)
+- Path can be relative (`./images/photo.png`) or absolute (`/static/img/photo.png`)
+
+## Special Components
+
+MDX allows custom React components. Here are the ones available in AAI Wiki:
+
+### Alert Boxes (AsideMessage)
+
+First, add this import at the top of your file (after the front matter):
+
+```markdown
+import AsideMessage from '@site/src/components/AsideMessage';
+```
+
+Then use it anywhere in your document:
+
+```markdown
+<AsideMessage type="note">
+  This is a general information box.
+</AsideMessage>
+
+<AsideMessage type="tip">
+  This is a helpful tip box (green).
+</AsideMessage>
+
+<AsideMessage type="warning">
+  This is a warning box (orange).
+</AsideMessage>
+
+<AsideMessage type="danger">
+  This is a critical warning box (red).
+</AsideMessage>
+```
+
+**Example:**
+
+<AsideMessage type="note">
+  This is what a note looks like. Use it for general information.
+</AsideMessage>
+
+### Collapsible Sections
+
+Use HTML `<details>` tags to hide content until clicked:
+
+```markdown
+<details>
+<summary>Click to expand</summary>
+
+Any content here will be hidden until the user clicks the summary.
+
+- You can use
+- Regular markdown
+- Inside details tags
+
+</details>
+```
+
+<details>
+<summary>Click to expand</summary>
+
+Any content here will be hidden until the user clicks the summary.
+
+- You can use
+- Regular markdown
+- Inside details tags
+
+</details>
+
+## Code Blocks
+
+### Inline Code
+
+Use single backticks for code within a sentence:
+
+```markdown
+The file is named `config.json` and contains settings.
+```
+
+### Code Blocks
+
+Use triple backticks for multi-line code:
+
+````markdown
+```
+This is a code block.
+Multiple lines are preserved.
+  Indentation is preserved.
+```
+````
+
+**With syntax highlighting** (specify the language):
+
+````markdown
+```javascript
+function example() {
+  return "This will be syntax highlighted";
+}
+```
+````
+
+````markdown
+```bash
+npm install
+npm start
+```
+````
+
+## Comments (Hidden Notes)
+
+Add comments that won't appear on the page:
+
+```markdown
+{/* This is a comment - it won't show on the published page */}
+```
+
+Use this for:
+- Notes to yourself
+- TODOs
+- Explanations for other editors
+
+## Common Mistakes and How to Fix Them
+
+### ❌ Mistake 1: Forgetting Blank Lines
+
+**Wrong:**
+```markdown
+## Heading
+Content starts immediately
+```
+
+**Right:**
+```markdown
+## Heading
+
+Content has a blank line above it
+```
+
+### ❌ Mistake 2: Incorrect List Spacing
+
+**Wrong:**
+```markdown
+- Item 1
+  -Item 2 (no space after dash)
+```
+
+**Right:**
+```markdown
+- Item 1
+  - Item 2 (space after dash and proper indent)
+```
+
+### ❌ Mistake 3: Broken Tables
+
+**Wrong:**
+```markdown
+| Column 1 | Column 2
+|----------|---------- (missing pipe at end)
+| Data | More data
+```
+
+**Right:**
+```markdown
+| Column 1 | Column 2 |
+|----------|----------|
+| Data | More data |
+```
+
+### ❌ Mistake 4: Links with Spaces
+
+**Wrong:**
+```markdown
+[Click here] (https://example.com) (space between ] and ()
+```
+
+**Right:**
+```markdown
+[Click here](https://example.com) (no space)
+```
+
+## MDX Best Practices
+
+### 1. Use Consistent Heading Hierarchy
+
+```markdown
+# Page Title (only one per page)
+
+## Main Section
+
+### Subsection
+
+#### Minor Point
+
+## Another Main Section
+```
+
+Don't skip levels (e.g., H2 → H4 without an H3).
+
+### 2. Keep Lines Short
+
+Break long paragraphs into shorter ones. Each paragraph should cover one main idea.
+
+**Good:**
+```markdown
+This paragraph introduces the topic.
+
+This paragraph provides supporting detail.
+
+This paragraph concludes the section.
+```
+
+### 3. Use Lists for Scanability
+
+Convert long sentences with multiple items into lists:
+
+**Instead of:**
+```markdown
+The benefits include ease of use, accessibility, and maintainability.
+```
+
+**Try:**
+```markdown
+The benefits include:
+- Ease of use
+- Accessibility
+- Maintainability
+```
+
+### 4. Add Blank Lines Around Special Elements
+
+Always put blank lines before and after:
+- Headings
+- Lists
+- Tables
+- Code blocks
+- Images
+- Components
+
+### 5. Proofread Before Submitting
+
+Check for:
+- Spelling errors
+- Broken links
+- Missing images
+- Incomplete tables
+- Unmatched formatting symbols (e.g., single `*` instead of paired `**`)
+
+## Quick Reference Template
+
+Copy this template to start a new page:
+
+```markdown
+---
+sidebar_position: 1
+title: Page Title Here
+description: Brief description of this page
+---
+
+import AsideMessage from '@site/src/components/AsideMessage';
+
+# Page Title Here
+
+Opening paragraph introducing the topic.
+
+## First Major Section
+
+Content for the first section.
+
+### Subsection
+
+More detailed information.
+
+## Second Major Section
+
+- Point 1
+- Point 2
+- Point 3
+
+<AsideMessage type="tip">
+  Add helpful notes using alert boxes.
+</AsideMessage>
+
+## Summary
+
+Concluding paragraph.
+```
+
+## Testing Your MDX File
+
+Before submitting:
+
+1. **Check the preview** - Most code editors show MDX/Markdown previews
+2. **Verify all links work** - Click each link to confirm
+3. **Check formatting** - Make sure headings, lists, and tables display correctly
+4. **Read it out loud** - Catches awkward phrasing
+
+## Getting Help
+
+- **View the source** - Look at existing pages in the `website/docs` folder to see examples
+- **Ask for help** - Submit your content even if you're unsure about formatting
+- **Check the preview** - The site preview will show you exactly how it will look
+
+<AsideMessage type="note">
+  Don't worry about making it perfect! Other contributors will help improve formatting during the review process.
+</AsideMessage>
+
+## Additional Resources
+
+- [Markdown Guide](https://www.markdownguide.org/) - Comprehensive Markdown reference
+- [Docusaurus MDX Guide](https://docusaurus.io/docs/markdown-features) - Advanced MDX features
+- [Contributing Guide](/contributing) - How to submit your changes
+
+---
+
+*Questions about this guide? [Edit this page](https://github.com/yourusername/aai-wiki/edit/main/website/docs/writing-guide.mdx) or open an issue on GitHub.*
