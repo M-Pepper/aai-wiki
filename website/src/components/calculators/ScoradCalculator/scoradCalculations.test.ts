@@ -43,14 +43,14 @@ describe('SCORAD Calculator', () => {
     test('calculates maximum possible score (103)', () => {
       const input: ScoradInput = {
         bodyRegions: {
-          headNeck: 100,
-          upperLimbLeft: 100,
-          upperLimbRight: 100,
-          lowerLimbLeft: 100,
-          lowerLimbRight: 100,
-          anteriorTrunk: 100,
-          back: 100,
-          genitals: 100
+          headNeck: 9,
+          upperLimbLeft: 9,
+          upperLimbRight: 9,
+          lowerLimbLeft: 18,
+          lowerLimbRight: 18,
+          anteriorTrunk: 18,
+          back: 18,
+          genitals: 1
         },
         intensity: {
           redness: 3,
@@ -78,7 +78,7 @@ describe('SCORAD Calculator', () => {
 
     test('calculates score with only body surface area', () => {
       const input = createEmptyInput();
-      input.bodyRegions.headNeck = 50; // 50% of head/neck = 4.5% BSA
+      input.bodyRegions.headNeck = 4.5; // 4.5% BSA
 
       const result = calculateScorad(input);
 
@@ -118,12 +118,12 @@ describe('SCORAD Calculator', () => {
     test('validates SCORAD formula: (A/5) + (7I/2) + S', () => {
       const input: ScoradInput = {
         bodyRegions: {
-          headNeck: 100,      // 9% BSA
+          headNeck: 9,        // 9% BSA
           upperLimbLeft: 0,
           upperLimbRight: 0,
           lowerLimbLeft: 0,
           lowerLimbRight: 0,
-          anteriorTrunk: 100, // 18% BSA
+          anteriorTrunk: 18,  // 18% BSA
           back: 0,
           genitals: 0
         },
@@ -143,7 +143,7 @@ describe('SCORAD Calculator', () => {
 
       const result = calculateScorad(input);
 
-      // A = (100 * 0.09) + (100 * 0.18) = 9 + 18 = 27
+      // A = 9 + 18 = 27
       expect(result.aScore).toBe(27);
 
       // I = 2 + 1 + 0 + 1 + 0 + 2 = 6
@@ -172,7 +172,7 @@ describe('SCORAD Calculator', () => {
 
     test('interprets score = 25 as moderate', () => {
       const input = createEmptyInput();
-      input.bodyRegions.headNeck = 100; // A = 9
+      input.bodyRegions.headNeck = 9; // A = 9
       input.subjective.itch = 10;
       input.subjective.sleeplessness = 10; // S = 20
       // (9/5) + 0 + 20 = 1.8 + 20 = 21.8 (still mild)
@@ -189,8 +189,8 @@ describe('SCORAD Calculator', () => {
 
     test('interprets score = 50 as severe', () => {
       const input = createEmptyInput();
-      input.bodyRegions.anteriorTrunk = 100; // A = 18
-      input.bodyRegions.back = 100; // A += 18 = 36
+      input.bodyRegions.anteriorTrunk = 18; // A = 18
+      input.bodyRegions.back = 18; // A += 18 = 36
       input.intensity.redness = 3;
       input.intensity.dryness = 3; // I = 6
       input.subjective.itch = 8;
@@ -211,16 +211,16 @@ describe('SCORAD Calculator', () => {
   });
 
   describe('calculateTotalBsa', () => {
-    test('calculates total BSA correctly with weighted regions', () => {
+    test('calculates total BSA correctly', () => {
       const regions: BodyRegions = {
-        headNeck: 100,        // 100% * 0.09 = 9
-        upperLimbLeft: 100,   // 100% * 0.09 = 9
-        upperLimbRight: 100,  // 100% * 0.09 = 9
-        lowerLimbLeft: 100,   // 100% * 0.18 = 18
-        lowerLimbRight: 100,  // 100% * 0.18 = 18
-        anteriorTrunk: 100,   // 100% * 0.18 = 18
-        back: 100,            // 100% * 0.18 = 18
-        genitals: 100         // 100% * 0.01 = 1
+        headNeck: 9,          // 9% BSA
+        upperLimbLeft: 9,     // 9% BSA
+        upperLimbRight: 9,    // 9% BSA
+        lowerLimbLeft: 18,    // 18% BSA
+        lowerLimbRight: 18,   // 18% BSA
+        anteriorTrunk: 18,    // 18% BSA
+        back: 18,             // 18% BSA
+        genitals: 1           // 1% BSA
       };
 
       const total = calculateTotalBsa(regions);
@@ -229,10 +229,10 @@ describe('SCORAD Calculator', () => {
 
     test('calculates partial BSA correctly', () => {
       const regions: BodyRegions = {
-        headNeck: 50,         // 50% * 0.09 = 4.5
+        headNeck: 4.5,        // 4.5% BSA
         upperLimbLeft: 0,
         upperLimbRight: 0,
-        lowerLimbLeft: 25,    // 25% * 0.18 = 4.5
+        lowerLimbLeft: 4.5,   // 4.5% BSA
         lowerLimbRight: 0,
         anteriorTrunk: 0,
         back: 0,
@@ -246,16 +246,16 @@ describe('SCORAD Calculator', () => {
 
   describe('validation functions', () => {
     describe('validateBodyRegions', () => {
-      test('accepts valid body region percentages', () => {
+      test('accepts valid body region BSA values', () => {
         const regions: BodyRegions = {
-          headNeck: 50,
+          headNeck: 5,
           upperLimbLeft: 0,
-          upperLimbRight: 100,
-          lowerLimbLeft: 25,
-          lowerLimbRight: 75,
+          upperLimbRight: 9,
+          lowerLimbLeft: 10,
+          lowerLimbRight: 15,
           anteriorTrunk: 10,
-          back: 90,
-          genitals: 5
+          back: 18,
+          genitals: 0.5
         };
 
         const result = validateBodyRegions(regions);
@@ -263,7 +263,7 @@ describe('SCORAD Calculator', () => {
         expect(result.errors).toHaveLength(0);
       });
 
-      test('rejects negative percentages', () => {
+      test('rejects negative BSA values', () => {
         const regions = createEmptyInput().bodyRegions;
         regions.headNeck = -10;
 
@@ -272,9 +272,9 @@ describe('SCORAD Calculator', () => {
         expect(result.errors[0]).toContain('headNeck');
       });
 
-      test('rejects percentages > 100', () => {
+      test('rejects BSA values exceeding region maximum', () => {
         const regions = createEmptyInput().bodyRegions;
-        regions.anteriorTrunk = 150;
+        regions.anteriorTrunk = 25; // max is 18
 
         const result = validateBodyRegions(regions);
         expect(result.valid).toBe(false);
@@ -285,14 +285,14 @@ describe('SCORAD Calculator', () => {
     describe('validateTotalBsa', () => {
       test('warns when total BSA exceeds 100%', () => {
         const regions: BodyRegions = {
-          headNeck: 100,
-          upperLimbLeft: 100,
-          upperLimbRight: 100,
-          lowerLimbLeft: 100,
-          lowerLimbRight: 100,
-          anteriorTrunk: 100,
-          back: 100,
-          genitals: 100
+          headNeck: 9,
+          upperLimbLeft: 9,
+          upperLimbRight: 9,
+          lowerLimbLeft: 18,
+          lowerLimbRight: 18,
+          anteriorTrunk: 18,
+          back: 18,
+          genitals: 1
         };
 
         const result = validateTotalBsa(regions);
@@ -303,7 +303,7 @@ describe('SCORAD Calculator', () => {
 
       test('does not warn for total BSA <= 100%', () => {
         const regions = createEmptyInput().bodyRegions;
-        regions.headNeck = 50;
+        regions.headNeck = 5;
 
         const result = validateTotalBsa(regions);
         expect(result.valid).toBe(true);
@@ -416,7 +416,7 @@ describe('SCORAD Calculator', () => {
   describe('calculateScorad - rounding', () => {
     test('rounds results to 1 decimal place', () => {
       const input = createEmptyInput();
-      input.bodyRegions.headNeck = 33; // 33% * 0.09 = 2.97
+      input.bodyRegions.headNeck = 2.97; // 2.97% BSA
 
       const result = calculateScorad(input);
 
