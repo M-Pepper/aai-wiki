@@ -9,20 +9,22 @@ import React from 'react';
 interface ProgressStepsProps {
   steps: string[];
   currentStep: number;
+  isComplete?: boolean;
   className?: string;
 }
 
 export default function ProgressSteps({
   steps,
   currentStep,
+  isComplete = false,
   className = '',
 }: ProgressStepsProps): JSX.Element {
   return (
     <div className={`progress-steps ${className}`}>
       <div className="progress-steps__dots" role="progressbar" aria-valuenow={currentStep + 1} aria-valuemin={1} aria-valuemax={steps.length}>
         {steps.map((step, index) => {
-          const isCompleted = index < currentStep;
-          const isCurrent = index === currentStep;
+          const isCompleted = index < currentStep || (index === currentStep && isComplete);
+          const isCurrent = index === currentStep && !isComplete;
 
           return (
             <div

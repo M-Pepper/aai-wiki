@@ -55,11 +55,7 @@ export default function ScoradCalculator(): JSX.Element {
 
   // Calculate total BSA for display
   const calculateTotalBsa = () => {
-    return Object.entries(input.bodyRegions).reduce((total, [key, percentage]) => {
-      const region = BODY_REGIONS.find(r => r.key === key);
-      if (!region) return total;
-      return total + (percentage * region.maxBsa / 100);
-    }, 0);
+    return Object.values(input.bodyRegions).reduce((total, value) => total + value, 0);
   };
 
   // Update body region percentage
@@ -148,8 +144,8 @@ export default function ScoradCalculator(): JSX.Element {
             description={`Maximum: ${region.maxBsa}% of total BSA`}
             value={input.bodyRegions[region.key as keyof typeof input.bodyRegions]}
             min={0}
-            max={100}
-            step={5}
+            max={region.maxBsa}
+            step={1}
             unit="%"
             onChange={(value) => updateBodyRegion(region.key, value)}
           />
@@ -297,7 +293,7 @@ export default function ScoradCalculator(): JSX.Element {
       <h1>SCORAD Calculator</h1>
       <p>SCORing Atopic Dermatitis - Severity assessment tool</p>
 
-      <ProgressSteps steps={STEPS} currentStep={currentStep} />
+      <ProgressSteps steps={STEPS} currentStep={currentStep} isComplete={currentStep === 3 && result !== null} />
 
       {currentStep === 0 && renderBodySurfaceStep()}
       {currentStep === 1 && renderIntensityStep()}
