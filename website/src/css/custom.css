@@ -323,9 +323,38 @@ table td {
    Table of Contents
    ========================================================================== */
 
+/* Reduce TOC width and font size to take up less space */
+.table-of-contents {
+  width: 200px;
+  font-size: 0.875rem;
+}
+
+.table-of-contents__link {
+  padding: 0.25rem 0.5rem;
+}
+
 .table-of-contents__link--active {
   font-weight: 600;
   color: var(--aai-primary);
+}
+
+/* Reduce TOC heading size */
+.table-of-contents__heading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Adjust nested TOC items */
+.table-of-contents ul {
+  padding-left: 0.75rem;
+}
+
+/* Make TOC more compact on desktop */
+@media (min-width: 997px) {
+  .tocCollapsible_node_modules-\@docusaurus-theme-classic-lib-theme-TOC-styles-module {
+    max-width: 200px;
+  }
 }
 
 /* ============================================================================
