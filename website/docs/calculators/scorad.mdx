@@ -1,0 +1,93 @@
+---
+title: 'SCORAD Calculator'
+description: 'SCORing Atopic Dermatitis - Calculate disease severity for atopic dermatitis patients'
+sidebar_position: 1
+---
+
+import ScoradCalculator from '@site/src/components/calculators/ScoradCalculator/ScoradCalculator';
+
+# SCORAD Calculator
+
+The **SCORAD (SCORing Atopic Dermatitis)** index is a clinical tool used to assess the severity of atopic dermatitis (eczema). It combines objective clinical signs with subjective patient symptoms.
+
+## About SCORAD
+
+The SCORAD score ranges from **0 to 103** and consists of three components:
+
+- **A: Body Surface Area (0-100)** - Extent of affected skin using the rule of nines
+- **I: Intensity (0-18)** - Sum of 6 clinical signs (each scored 0-3)
+- **S: Subjective Symptoms (0-20)** - Itch and sleep loss (each 0-10)
+
+### Formula
+
+```
+SCORAD = (A/5) + (7I/2) + S
+```
+
+### Interpretation
+
+- **Mild:** < 25
+- **Moderate:** 25-50
+- **Severe:** > 50
+
+## Calculator
+
+<ScoradCalculator />
+
+## Clinical Use
+
+The SCORAD index is used to:
+
+- **Assess disease severity** at initial evaluation
+- **Monitor treatment response** over time
+- **Guide treatment decisions** (step-up or step-down therapy)
+- **Standardize reporting** in clinical trials
+
+## Components Explained
+
+### Body Surface Area (A)
+
+Estimate the percentage of each body region affected:
+
+| Region | Maximum BSA |
+|--------|-------------|
+| Head & Neck | 9% |
+| Upper Limbs (each) | 9% |
+| Lower Limbs (each) | 18% |
+| Anterior Trunk | 18% |
+| Back | 18% |
+| Genitals | 1% |
+
+### Intensity Signs (I)
+
+Rate the intensity of these 6 signs on the **most affected area**:
+
+1. **Redness (Erythema)**
+2. **Swelling (Edema/Papulation)**
+3. **Oozing/Crusting**
+4. **Scratch Marks (Excoriation)**
+5. **Skin Thickening (Lichenification)**
+6. **Dryness**
+
+Each sign is scored:
+- 0 = None
+- 1 = Mild
+- 2 = Moderate
+- 3 = Severe
+
+### Subjective Symptoms (S)
+
+Patient-reported symptoms over the **past 3 days** using a Visual Analogue Scale (0-10):
+
+- **Itch (Pruritus):** 0 = no itch, 10 = worst imaginable
+- **Sleep Loss:** 0 = no sleep loss, 10 = complete sleep loss
+
+## References
+
+- European Task Force on Atopic Dermatitis. Severity scoring of atopic dermatitis: the SCORAD index. *Dermatology*. 1993;186(23-31).
+- Chu DK, Schneider L, Asiniwasis RN, et al. Atopic dermatitis (eczema) guidelines: 2023 American Academy of Allergy, Asthma and Immunology/American College of Allergy, Asthma and Immunology Joint Task Force on Practice Parameters GRADE- and Institute of Medicine-based recommendations. *Ann Allergy Asthma Immunol*. 2024;132(3):274-312. doi:10.1016/j.anai.2023.11.009
+- [Sanofi Campus - SCORAD Information](https://www.campus.sanofi/qa/patient-support/Atopic-Dermatitis/2022/ar/scorad)
+
+## Disclaimer
+
+This calculator is for educational and clinical reference purposes. Always use clinical judgment and consider the full clinical picture when making treatment decisions.

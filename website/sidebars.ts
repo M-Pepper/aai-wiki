@@ -33,6 +33,15 @@ const sidebars: SidebarsConfig = {
         'anaphylaxis/index',
       ],
     },
+    {
+      type: 'category',
+      label: '🧮 Clinical Calculators',
+      collapsed: false,
+      items: [
+        'calculators/scorad',
+        'calculators/uas7',
+      ],
+    },
     // Coming soon: Immunology and Procedures sections
   ],
 };

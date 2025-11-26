@@ -192,11 +192,6 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/assets',
-          label: 'Assets',
-          position: 'left',
-        },
-        {
           href: 'https://github.com/M-Pepper/aai-wiki',
           position: 'right',
           className: 'header-github-link',
@@ -259,6 +254,10 @@ const config: Config = {
             {
               label: 'Contributing Guide',
               to: '/contributing',
+            },
+            {
+              label: 'Assets',
+              to: '/assets',
             },
             // Uncomment when GitHub is set up
             // {

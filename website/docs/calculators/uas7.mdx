@@ -1,0 +1,98 @@
+---
+title: 'UAS7 Calculator'
+description: 'Urticaria Activity Score - Track chronic urticaria severity over 7 days'
+sidebar_position: 2
+---
+
+import Uas7Calculator from '@site/src/components/calculators/Uas7Calculator/Uas7Calculator';
+
+# UAS7 Calculator
+
+The **UAS7 (Urticaria Activity Score over 7 days)** is a patient-reported outcome measure used to assess disease activity in chronic spontaneous urticaria (CSU).
+
+## About UAS7
+
+The UAS7 score ranges from **0 to 42** and tracks daily symptoms over **7 consecutive days**:
+
+- **Daily Scoring:** Wheals (0-3) + Itching (0-3) = Daily Total (0-6)
+- **Weekly Total:** Sum of all 7 daily scores (0-42)
+
+### Interpretation
+
+- **Well-controlled:** 0
+- **Mild:** 1-6
+- **Moderate:** 7-15
+- **Severe:** 16-42
+
+:::info Clinical Threshold
+A score **≥11** has been validated with 74% sensitivity and 86% specificity for identifying patients requiring therapeutic intervention.
+:::
+
+## Calculator
+
+<Uas7Calculator />
+
+## How to Use
+
+### Daily Scoring
+
+Complete the assessment **once daily** for **7 consecutive days**. Score symptoms based on the past 24 hours.
+
+### Wheals (Hives) Score
+
+Rate the number of wheals:
+
+- **0 = None** - No wheals
+- **1 = Mild** - Less than 20 wheals in 24 hours
+- **2 = Moderate** - 20 to 50 wheals in 24 hours
+- **3 = Intense** - More than 50 wheals in 24 hours OR large confluent areas
+
+### Itching (Pruritus) Score
+
+Rate the severity of itching:
+
+- **0 = None** - No itching
+- **1 = Mild** - Present but not annoying or troublesome
+- **2 = Moderate** - Troublesome but does not interfere with normal daily activity or sleep
+- **3 = Intense** - Severe itching that interferes with normal daily activity or sleep
+
+## Clinical Use
+
+The UAS7 is used to:
+
+- **Monitor disease activity** over time
+- **Assess treatment response** to medications (e.g., antihistamines, omalizumab)
+- **Guide treatment decisions** (dose adjustment, therapy changes)
+- **Determine disease control** for step-down or discontinuation
+- **Standardize endpoints** in clinical trials
+
+## Tips for Accurate Tracking
+
+1. **Score at the same time each day** (e.g., before bed)
+2. **Be consistent** - Use the same assessment period
+3. **Consider the entire day** - Not just the current moment
+4. **Keep a diary** - Some patients find it helpful to track alongside
+5. **Complete all 7 days** - Even if symptoms improve or resolve
+
+## Response to Treatment
+
+### Excellent Response
+- UAS7 = 0 (symptom-free)
+- Consider treatment step-down after sustained control
+
+### Good Response
+- UAS7 ≤6 (minimal symptoms)
+- Continue current therapy
+
+### Inadequate Response
+- UAS7 >6 or no improvement from baseline
+- Consider treatment adjustment or escalation
+
+## References
+
+- Hawro T, et al. The Urticaria Activity Score—Validity, Reliability, and Responsiveness. *J Allergy Clin Immunol Pract*. 2018;6(4):1185-1190.
+- [MDCalc - UAS7 Calculator](https://www.mdcalc.com/calc/10226/urticaria-activity-score-uas)
+
+## Disclaimer
+
+This calculator is for educational and clinical reference purposes. Patient-reported scores should be interpreted in the context of physical examination and clinical history.
