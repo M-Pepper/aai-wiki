@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'AAI Wiki',
   tagline: 'Evidence-based clinical reference for allergy, asthma, and immunology',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -25,13 +25,6 @@ const config: Config = {
 
   // SEO Configuration
   headTags: [
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'keywords',
-        content: 'allergy, asthma, immunology, clinical guidelines, AAI, evidence-based medicine, allergic rhinitis, anaphylaxis, immunotherapy, medical reference',
-      },
-    },
     {
       tagName: 'meta',
       attributes: {
@@ -138,17 +131,16 @@ const config: Config = {
 
   themeConfig: {
     // Social card for sharing (will use favicon until custom card is created)
-    image: 'img/favicon-512.png',
+    image: 'img/docusaurus-social-card.jpg',
 
     // SEO Metadata
     metadata: [
-      {name: 'keywords', content: 'allergy, asthma, immunology, clinical guidelines, AAI, evidence-based medicine'},
       {name: 'twitter:card', content: 'summary_large_image'},
       {name: 'twitter:title', content: 'AAI Wiki - Evidence-Based Clinical Reference'},
       {name: 'twitter:description', content: 'Free, open-source clinical reference for allergy, asthma, and immunology professionals'},
       {property: 'og:title', content: 'AAI Wiki - Evidence-Based Clinical Reference'},
       {property: 'og:description', content: 'Free, open-source clinical reference for allergy, asthma, and immunology professionals'},
-      {property: 'og:image', content: 'https://aai.wiki/img/favicon-512.png'},
+      {property: 'og:image', content: 'https://aai.wiki/img/docusaurus-social-card.jpg'},
       {property: 'og:url', content: 'https://aai.wiki'},
     ],
 
@@ -259,11 +251,23 @@ const config: Config = {
               label: 'Assets',
               to: '/assets',
             },
-            // Uncomment when GitHub is set up
-            // {
-            //   label: 'GitHub',
-            //   href: 'https://github.com/yourusername/aai-wiki',
-            // },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/M-Pepper/aai-wiki',
+            },
+          ],
+        },
+        {
+          title: 'Legal',
+          items: [
+            {
+              label: 'Terms & Disclaimer',
+              to: '/terms-of-use',
+            },
+            {
+              label: 'Privacy Policy',
+              to: '/privacy-policy',
+            },
           ],
         },
       ],
