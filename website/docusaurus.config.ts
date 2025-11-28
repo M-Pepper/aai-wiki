@@ -281,7 +281,7 @@ const config: Config = {
       appId: 'AP77NH301V',
       apiKey: 'b4345a329702ddfc2c59459be2966904',
       indexName: 'AAI Wiki',
-      contextualSearch: true,
+      contextualSearch: false,
       // Note: 'askAi' is not directly supported in Docusaurus theme config types yet
     },
 
