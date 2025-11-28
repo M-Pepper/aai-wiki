@@ -1,22 +1,60 @@
 ---
-sidebar_position: 3
-sidebar_label: Anaphylaxis
+sidebar_position: 1
+sidebar_label: Anaphylaxis Overview
+title: Anaphylaxis
+description: Emergency management, recognition, and long-term care of anaphylaxis.
 ---
+
+import Card from '@site/src/components/Card';
+import AsideMessage from '@site/src/components/AsideMessage';
+import { AlertTriangle, Syringe, ShieldCheck, Activity } from 'lucide-react';
 
 # Anaphylaxis
 
-Recognition and emergency management of anaphylaxis.
+Anaphylaxis is a severe, life-threatening systemic hypersensitivity reaction characterized by rapid onset of airway, breathing, or circulatory problems.
 
-## Overview
+<AsideMessage type="note">
+  Content in this section is currently under development. Contributions are welcome!
+</AsideMessage>
 
-Anaphylaxis is a severe, potentially life-threatening systemic hypersensitivity reaction characterized by rapid onset of airway, breathing, and/or circulatory problems, often associated with skin and mucosal changes.
+## Clinical Topics
 
-## Topics
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '1rem',
+  marginBottom: '3rem',
+  marginTop: '2rem'
+}}>
+  <Card
+    icon={<AlertTriangle size={20} />}
+    title="Diagnosis & Recognition"
+    description="Clinical criteria for anaphylaxis, differential diagnosis, and symptom recognition."
+    href="#"
+    badge="Coming Soon"
+  />
 
-- Coming soon: Recognition criteria, emergency management, epinephrine administration
-- Coming soon: Biphasic reactions, observation period
-- Coming soon: Discharge planning and prevention
+  <Card
+    icon={<Syringe size={20} />}
+    title="Emergency Management"
+    description="First-line treatment with epinephrine, positioning, fluid resuscitation, and monitoring."
+    href="#"
+    badge="Coming Soon"
+  />
 
-## Quick Links
+  <Card
+    icon={<ShieldCheck size={20} />}
+    title="Long-term Management"
+    description="Action plans, biphasic reactions, and patient education on autoinjector use."
+    href="#"
+    badge="Coming Soon"
+  />
 
-- [WAO Anaphylaxis Guidelines](https://www.worldallergy.org/education-and-programs/education/anaphylaxis-guidelines)
+  <Card
+    icon={<Activity size={20} />}
+    title="Idiopathic Anaphylaxis"
+    description="Diagnostic workup and management strategies for anaphylaxis without a clear trigger."
+    href="#"
+    badge="Coming Soon"
+  />
+</div>

@@ -1,30 +1,65 @@
 ---
 sidebar_position: 1
 sidebar_label: Asthma Overview
+title: Asthma
+description: Comprehensive clinical reference for asthma diagnosis, classification, and management.
 ---
+
+import Card from '@site/src/components/Card';
+import AsideMessage from '@site/src/components/AsideMessage';
+import { AlertTriangle, ClipboardList, Pill, Baby } from 'lucide-react';
 
 # Asthma
 
-Comprehensive clinical reference for asthma diagnosis, classification, and management.
-
-## Overview
-
 Asthma is a chronic inflammatory airway disease characterized by variable respiratory symptoms and airflow limitation. It affects millions worldwide and requires individualized management approaches.
 
-## Topics
+<AsideMessage type="note">
+  Our asthma content follows the **GINA 2024** and **NAEPP** guidelines.
+</AsideMessage>
 
-### Diagnosis & Classification
-- [Acute Asthma Exacerbation](./acute-exacerbation-simple) - Emergency assessment and management
-- Coming soon: Asthma diagnosis, severity classification
+## Clinical Topics
 
-### Management
-- Coming soon: Controller medications, step-up/step-down therapy
-- Coming soon: Asthma action plans
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '1rem',
+  marginBottom: '3rem',
+  marginTop: '2rem'
+}}>
+  <Card
+    icon={<AlertTriangle size={20} />}
+    title="Acute Exacerbation"
+    description="Emergency assessment, severity classification, and management of acute asthma exacerbations in urgent care/ER settings."
+    href="/asthma/acute-exacerbation-simple"
+    badge="Updated"
+  />
 
-### Special Populations
-- Coming soon: Pediatric asthma, asthma in pregnancy
+  <Card
+    icon={<ClipboardList size={20} />}
+    title="Diagnosis & Classification"
+    description="Diagnostic criteria, spirometry interpretation, and severity classification."
+    href="#"
+    badge="Coming Soon"
+  />
 
-## Quick Links
+  <Card
+    icon={<Pill size={20} />}
+    title="Management Steps"
+    description="Stepwise management approach, controller medications, and biological therapies."
+    href="#"
+    badge="Coming Soon"
+  />
 
-- [GINA 2024 Guidelines](https://ginasthma.org/)
-- [NAEPP Guidelines](https://www.nhlbi.nih.gov/health-topics/asthma)
+  <Card
+    icon={<Baby size={20} />}
+    title="Special Populations"
+    description="Pediatric asthma, asthma in pregnancy, and occupational asthma considerations."
+    href="#"
+    badge="Coming Soon"
+  />
+</div>
+
+## Quick Guidelines
+
+*   [GINA 2024 Guidelines](https://ginasthma.org/)
+*   [NAEPP Guidelines](https://www.nhlbi.nih.gov/health-topics/asthma)

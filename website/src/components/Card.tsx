@@ -5,7 +5,7 @@ import clsx from 'clsx';
 /**
  * Card Component
  *
- * Used for creating card-based layouts on landing/category pages
+ * Clean, technical card style inspired by modern API docs
  */
 
 export interface CardProps {
@@ -15,9 +15,9 @@ export interface CardProps {
   description: string;
   /** Link destination */
   href: string;
-  /** Optional icon (emoji or React component) */
+  /** Optional icon (Lucide component or SVG) */
   icon?: React.ReactNode;
-  /** Optional badge text (e.g., "New", "Updated") */
+  /** Optional badge text */
   badge?: string;
   /** Custom className */
   className?: string;
@@ -38,73 +38,73 @@ export default function Card({
       style={{
         textDecoration: 'none',
         color: 'inherit',
-        display: 'block',
+        display: 'flex',
+        flexDirection: 'column',
         height: '100%',
+        padding: '1.25rem',
+        border: '1px solid var(--aai-border)',
+        borderRadius: 'var(--aai-radius-md)',
+        transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+        backgroundColor: 'var(--aai-bg-primary)',
       }}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        {/* Icon and Badge Row */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
-          {icon && (
-            <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>
-              {icon}
-            </div>
-          )}
-          {badge && (
-            <span
-              style={{
-                backgroundColor: 'var(--aai-primary)',
-                color: 'white',
-                padding: '0.25rem 0.5rem',
-                borderRadius: 'var(--aai-radius-sm)',
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                textTransform: 'uppercase',
-              }}
-            >
-              {badge}
-            </span>
-          )}
+      {badge && (
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '0.5rem' }}>
+          <span
+            style={{
+              backgroundColor: 'var(--aai-bg-secondary)',
+              color: 'var(--aai-text-secondary)',
+              border: '1px solid var(--aai-border)',
+              padding: '0.125rem 0.5rem',
+              borderRadius: '1rem',
+              fontSize: '0.7rem',
+              fontWeight: 500,
+              textTransform: 'uppercase',
+              letterSpacing: '0.02em',
+            }}
+          >
+            {badge}
+          </span>
         </div>
+      )}
 
-        {/* Title */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+        {icon && (
+          <div style={{ 
+            color: 'var(--aai-primary)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.1rem',
+            flexShrink: 0
+          }}>
+            {icon}
+          </div>
+        )}
         <h3
           style={{
-            marginTop: 0,
-            marginBottom: '0.75rem',
-            fontSize: '1.25rem',
+            margin: 0,
+            fontSize: '1rem',
             fontWeight: 600,
             color: 'var(--aai-text-primary)',
+            lineHeight: 1.2
           }}
         >
           {title}
         </h3>
-
-        {/* Description */}
-        <p
-          style={{
-            flex: 1,
-            margin: 0,
-            fontSize: '0.95rem',
-            lineHeight: 1.6,
-            color: 'var(--aai-text-secondary)',
-          }}
-        >
-          {description}
-        </p>
-
-        {/* Arrow indicator */}
-        <div
-          style={{
-            marginTop: '1rem',
-            color: 'var(--aai-primary)',
-            fontWeight: 500,
-            fontSize: '0.9rem',
-          }}
-        >
-          Learn more →
-        </div>
       </div>
+
+      <p
+        style={{
+          margin: 0,
+          fontSize: '0.875rem',
+          lineHeight: 1.5,
+          color: 'var(--aai-text-secondary)',
+          flex: 1,
+        }}
+      >
+        {description}
+      </p>
     </Link>
   );
 }

@@ -10,32 +10,59 @@ const sidebars: SidebarsConfig = {
     'intro',
     {
       type: 'category',
-      label: '🫁 Asthma',
+      label: 'Asthma',
+      link: {
+        type: 'doc',
+        id: 'asthma/index',
+      },
       collapsed: false,
       items: [
-        'asthma/index',
         'asthma/acute-exacerbation-simple',
       ],
     },
     {
       type: 'category',
-      label: '🥜 Allergies',
+      label: 'Allergies',
+      link: {
+        type: 'doc',
+        id: 'allergies/index',
+      },
       collapsed: true,
-      items: [
-        'allergies/index',
-      ],
+      items: [],
     },
     {
       type: 'category',
-      label: '🚨 Anaphylaxis',
+      label: 'Anaphylaxis',
+      link: {
+        type: 'doc',
+        id: 'anaphylaxis/index',
+      },
       collapsed: true,
-      items: [
-        'anaphylaxis/index',
-      ],
+      items: [],
     },
     {
       type: 'category',
-      label: '🧮 Clinical Calculators',
+      label: 'Immunology',
+      link: {
+        type: 'doc',
+        id: 'immunology/index',
+      },
+      collapsed: true,
+      items: [],
+    },
+    {
+      type: 'category',
+      label: 'Procedures',
+      link: {
+        type: 'doc',
+        id: 'procedures/index',
+      },
+      collapsed: true,
+      items: [],
+    },
+    {
+      type: 'category',
+      label: 'Clinical Calculators',
       collapsed: false,
       items: [
         'calculators/scorad',
@@ -45,7 +72,7 @@ const sidebars: SidebarsConfig = {
     // Coming soon: Immunology and Procedures sections
     {
       type: 'category',
-      label: '📚 Resources',
+      label: 'Resources',
       collapsed: true,
       items: [
         'about',

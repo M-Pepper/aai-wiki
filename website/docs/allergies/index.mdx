@@ -1,25 +1,60 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 sidebar_label: Allergies Overview
+title: Allergies
+description: Comprehensive clinical reference for food allergies, environmental allergies, and allergic skin conditions.
 ---
+
+import Card from '@site/src/components/Card';
+import AsideMessage from '@site/src/components/AsideMessage';
+import { Utensils, Flower, AlertCircle, Stethoscope } from 'lucide-react';
 
 # Allergies
 
-Clinical reference for diagnosis and management of allergic conditions.
+Allergic diseases encompass a wide range of conditions where the immune system reacts hypersensitively to typically harmless substances.
 
-## Topics
+<AsideMessage type="note">
+  Content in this section is currently under development. Contributions are welcome!
+</AsideMessage>
 
-### Food Allergies
-- Coming soon: Food allergy diagnosis, management, oral immunotherapy
+## Clinical Topics
 
-### Drug Allergies
-- Coming soon: Drug hypersensitivity reactions, desensitization protocols
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '1rem',
+  marginBottom: '3rem',
+  marginTop: '2rem'
+}}>
+  <Card
+    icon={<Utensils size={20} />}
+    title="Food Allergies"
+    description="IgE-mediated food allergy, FPIES, oral allergy syndrome, and oral immunotherapy (OIT)."
+    href="#"
+    badge="Coming Soon"
+  />
 
-### Insect Allergies
-- Coming soon: Venom immunotherapy, emergency management
+  <Card
+    icon={<Flower size={20} />}
+    title="Environmental Allergies"
+    description="Allergic rhinitis, conjunctivitis, and pollen/mold/dust mite avoidance strategies."
+    href="#"
+    badge="Coming Soon"
+  />
 
----
+  <Card
+    icon={<AlertCircle size={20} />}
+    title="Skin Allergies"
+    description="Atopic dermatitis (eczema), contact dermatitis, and chronic urticaria."
+    href="#"
+    badge="Coming Soon"
+  />
 
-**Quick Links:**
-- [PRACTALL Guidelines](https://www.practall.org/)
-- [AAAAI Food Allergy Resources](https://www.aaaai.org/conditions-treatments/allergies/food-allergies)
+  <Card
+    icon={<Stethoscope size={20} />}
+    title="Drug Allergies"
+    description="Penicillin allergy, drug desensitization protocols, and perioperative anaphylaxis."
+    href="#"
+    badge="Coming Soon"
+  />
+</div>

@@ -147,7 +147,7 @@ a {
 
 /* Main content area max-width for readability */
 .markdown {
-  max-width: 800px;
+  /* max-width removed to allow fluid width filling */
 }
 
 /* Code blocks */

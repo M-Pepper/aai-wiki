@@ -1,0 +1,60 @@
+---
+sidebar_position: 1
+sidebar_label: Procedures Overview
+title: Procedures
+description: Clinical procedures in allergy and immunology practice.
+---
+
+import Card from '@site/src/components/Card';
+import AsideMessage from '@site/src/components/AsideMessage';
+import { Syringe, Stethoscope, Tablets, FileText } from 'lucide-react';
+
+# Procedures
+
+Evidence-based protocols for common diagnostic and therapeutic procedures in allergy/immunology practice.
+
+<AsideMessage type="note">
+  Content in this section is currently under development. Contributions are welcome!
+</AsideMessage>
+
+## Clinical Topics
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '1rem',
+  marginBottom: '3rem',
+  marginTop: '2rem'
+}}>
+  <Card
+    icon={<Syringe size={20} />}
+    title="Skin Testing"
+    description="Protocols for skin prick testing (SPT) and intradermal testing for environmental and drug allergies."
+    href="#"
+    badge="Coming Soon"
+  />
+
+  <Card
+    icon={<Tablets size={20} />}
+    title="Oral Challenges"
+    description="Graded oral food and drug challenges: protocols, safety measures, and interpretation."
+    href="#"
+    badge="Coming Soon"
+  />
+
+  <Card
+    icon={<Stethoscope size={20} />}
+    title="Spirometry"
+    description="Performance and interpretation of office spirometry for asthma diagnosis and monitoring."
+    href="#"
+    badge="Coming Soon"
+  />
+
+  <Card
+    icon={<FileText size={20} />}
+    title="Patch Testing"
+    description="Application and reading of patch tests for allergic contact dermatitis."
+    href="#"
+    badge="Coming Soon"
+  />
+</div>
