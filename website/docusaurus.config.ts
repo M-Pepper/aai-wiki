@@ -60,6 +60,14 @@ const config: Config = {
         href: 'https://aai.wiki',
       },
     },
+    // High-res icon for mobile devices and search engines
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        href: '/img/favicon.png',
+      },
+    },
   ],
 
   onBrokenLinks: 'throw',
