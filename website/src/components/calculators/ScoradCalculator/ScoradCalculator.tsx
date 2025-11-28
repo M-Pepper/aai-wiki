@@ -206,13 +206,6 @@ export default function ScoradCalculator(): JSX.Element {
             step={1}
             onChange={(value) => updateSubjective('itch', value)}
           />
-          <ScaleVisual
-            value={input.subjective.itch}
-            min={0}
-            max={10}
-            minLabel="No itch"
-            maxLabel="Worst imaginable"
-          />
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
@@ -223,13 +216,6 @@ export default function ScoradCalculator(): JSX.Element {
             max={10}
             step={1}
             onChange={(value) => updateSubjective('sleeplessness', value)}
-          />
-          <ScaleVisual
-            value={input.subjective.sleeplessness}
-            min={0}
-            max={10}
-            minLabel="No sleep loss"
-            maxLabel="Complete sleep loss"
           />
         </div>
 

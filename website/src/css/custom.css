@@ -348,13 +348,6 @@ table td {
    Table of Contents
    ========================================================================== */
 
-/* Desktop TOC container */
-.theme-doc-toc-desktop {
-  width: 200px !important;
-  min-width: 200px !important;
-  max-width: 200px !important;
-}
-
 /* TOC List styles */
 .table-of-contents {
   font-size: 0.8rem;
@@ -411,4 +404,25 @@ table td {
 
 .header-github-link:hover {
   opacity: 0.6;
+}
+
+/* ============================================================================
+   Navbar Customizations
+   ========================================================================== */
+.navbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__items--center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 0; /* Do not allow it to grow and consume extra space */
+  /* This ensures the search bar itself remains centered relative to the whole navbar */
+}
+
+.navbar__items--center .navbar__search {
+  flex-grow: 0;
+  margin: 0 auto;
 }
