@@ -119,21 +119,7 @@ const config: Config = {
     ],
   ],
 
-  themes: [
-    [
-      '@easyops-cn/docusaurus-search-local',
-      {
-        hashed: true,
-        language: ['en'],
-        highlightSearchTermsOnTargetPage: true,
-        explicitSearchResultPath: true,
-        indexDocs: true,
-        indexBlog: true,
-        indexPages: false,
-        docsRouteBasePath: '/',
-      },
-    ],
-  ],
+  themes: [],
 
   plugins: [],
 
@@ -197,12 +183,6 @@ const config: Config = {
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
         },
-
-        // Search will be added here when Algolia is configured
-        // {
-        //   type: 'search',
-        //   position: 'right',
-        // },
       ],
     },
 
@@ -288,15 +268,14 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
 
-    // Algolia search configuration (add when ready)
-    // algolia: {
-    //   appId: 'YOUR_APP_ID',
-    //   apiKey: 'YOUR_SEARCH_API_KEY',
-    //   indexName: 'aai-wiki',
-    //   contextualSearch: true,
-    //   searchParameters: {},
-    //   searchPagePath: 'search',
-    // },
+    // Algolia search configuration
+    algolia: {
+      appId: 'AP77NH301V',
+      apiKey: 'b4345a329702ddfc2c59459be2966904',
+      indexName: 'AAI Wiki',
+      contextualSearch: true,
+      // Note: 'askAi' is not directly supported in Docusaurus theme config types yet
+    },
 
   } satisfies Preset.ThemeConfig,
 };
