@@ -9,6 +9,7 @@ description: Evidence-based clinical reference for allergy, asthma, and immunolo
 import Card from '@site/src/components/Card';
 import AsideMessage from '@site/src/components/AsideMessage';
 import DismissibleBanner from '@site/src/components/DismissibleBanner/DismissibleBanner';
+import { Activity, Calculator, Utensils, AlertTriangle, Shield, Syringe, Microscope } from 'lucide-react';
 
 <DismissibleBanner id="wip-2025" variant="info">
   **Work in Progress:** This wiki is under active development. Content is being added progressively with community input and expert review. See our <a href="/contributing">Contributing Guide</a> to help build this resource.
@@ -35,12 +36,12 @@ import DismissibleBanner from '@site/src/components/DismissibleBanner/Dismissibl
 
 <div style={{
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-  gap: '1.5rem',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '1rem',
   marginBottom: '3rem'
 }}>
   <Card
-    icon="🫁"
+    icon={<Activity size={20} />}
     title="Asthma"
     description="Comprehensive asthma management including diagnosis, classification, treatment protocols, and emergency management of acute exacerbations."
     href="/asthma"
@@ -48,7 +49,7 @@ import DismissibleBanner from '@site/src/components/DismissibleBanner/Dismissibl
   />
 
   <Card
-    icon="🧮"
+    icon={<Calculator size={20} />}
     title="Calculators"
     description="Clinical calculators including SCORAD for atopic dermatitis severity and UAS7 for chronic urticaria assessment."
     href="/calculators/scorad"
@@ -56,7 +57,7 @@ import DismissibleBanner from '@site/src/components/DismissibleBanner/Dismissibl
   />
 
   <Card
-    icon="🥜"
+    icon={<Utensils size={20} />}
     title="Food Allergies"
     description="Food allergy diagnosis, management, oral immunotherapy protocols, and emergency action plans for allergic reactions."
     href="/allergies"
@@ -64,7 +65,7 @@ import DismissibleBanner from '@site/src/components/DismissibleBanner/Dismissibl
   />
 
   <Card
-    icon="🚨"
+    icon={<AlertTriangle size={20} />}
     title="Anaphylaxis"
     description="Recognition and emergency management of anaphylaxis, epinephrine administration, and prevention strategies."
     href="/anaphylaxis"
@@ -72,7 +73,7 @@ import DismissibleBanner from '@site/src/components/DismissibleBanner/Dismissibl
   />
 
   <Card
-    icon="🧬"
+    icon={<Shield size={20} />}
     title="Immunodeficiency"
     description="Primary and secondary immunodeficiency disorders, diagnostic workup, immunoglobulin replacement therapy."
     href="#"
@@ -80,7 +81,7 @@ import DismissibleBanner from '@site/src/components/DismissibleBanner/Dismissibl
   />
 
   <Card
-    icon="💉"
+    icon={<Syringe size={20} />}
     title="Immunotherapy"
     description="Subcutaneous and sublingual immunotherapy protocols, build-up schedules, and safety monitoring."
     href="#"
@@ -88,7 +89,7 @@ import DismissibleBanner from '@site/src/components/DismissibleBanner/Dismissibl
   />
 
   <Card
-    icon="🔬"
+    icon={<Microscope size={20} />}
     title="Biologics"
     description="Biologic therapies for asthma, atopic dermatitis, chronic urticaria, and other allergic conditions."
     href="#"

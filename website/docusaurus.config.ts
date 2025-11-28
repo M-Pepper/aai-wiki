@@ -68,6 +68,14 @@ const config: Config = {
         href: '/img/favicon.png',
       },
     },
+    // Algolia Domain Verification
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: 'BE93F0E0FE4E24A5',
+      },
+    },
   ],
 
   onBrokenLinks: 'throw',

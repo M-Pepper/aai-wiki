@@ -1,0 +1,60 @@
+---
+sidebar_position: 1
+sidebar_label: Immunology Overview
+title: Immunology
+description: Primary and secondary immunodeficiency disorders and immunological evaluations.
+---
+
+import Card from '@site/src/components/Card';
+import AsideMessage from '@site/src/components/AsideMessage';
+import { Shield, Dna, FlaskConical, AlertOctagon } from 'lucide-react';
+
+# Immunology
+
+Clinical immunology focuses on disorders of the immune system, including primary immunodeficiencies (inborn errors of immunity), secondary immunodeficiencies, and immune dysregulation.
+
+<AsideMessage type="note">
+  Content in this section is currently under development. Contributions are welcome!
+</AsideMessage>
+
+## Clinical Topics
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '1rem',
+  marginBottom: '3rem',
+  marginTop: '2rem'
+}}>
+  <Card
+    icon={<Shield size={20} />}
+    title="Primary Immunodeficiency"
+    description="Common variable immunodeficiency (CVID), agammaglobulinemia, and other inborn errors."
+    href="#"
+    badge="Coming Soon"
+  />
+
+  <Card
+    icon={<FlaskConical size={20} />}
+    title="Diagnostic Evaluation"
+    description="Interpretation of immunoglobulin levels, vaccine response testing, and lymphocyte subsets."
+    href="#"
+    badge="Coming Soon"
+  />
+
+  <Card
+    icon={<Dna size={20} />}
+    title="Genetics & molecular testing"
+    description="Genetic testing panels and interpretation for immunological disorders."
+    href="#"
+    badge="Coming Soon"
+  />
+
+  <Card
+    icon={<AlertOctagon size={20} />}
+    title="Secondary Immunodeficiency"
+    description="Immune suppression due to medications, malignancy, or other systemic diseases."
+    href="#"
+    badge="Coming Soon"
+  />
+</div>
